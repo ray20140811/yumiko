@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>日語單字</h1>
+
+<table border="1" style="border-collapse:collapse;">
+    <thead>
+        <tr>
+            <th>收藏單字</th>
+            <th>日文</th>
+            <th>漢字/英文/外來語</th>
+            <th>中文</th>
+            <th>編輯</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @vocabularies.each do |vocabulary| %>
+        <tr>
+            <td><%= link_to "收藏", "#" %></td>
+            <td><h3><%= vocabulary.japanese %></h3></td>
+            <td><%= vocabulary.kanji %></td>
+            <td><%= vocabulary.chinese %></td>
+            <td>
+                <%= link_to "修改", edit_vocabulary_path(vocabulary) %>
+                <%= link_to "刪除", vocabulary_path(vocabulary), method: "delete", data: { confirm: "確認刪除" } %>
+            </td>
+        </tr>
+      <% end %>        
+    </tbody>
+</table>
+
+<br/>
+<%= link_to "新增單字", new_vocabulary_path %>

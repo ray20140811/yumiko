@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @vocabulary %>
+
+<div>
+  <%= button_to "Destroy this vocabulary", @vocabulary, method: :delete %>  
+  <br/>
+  <%= link_to "回單字列表", vocabularies_path %>
+</div>
