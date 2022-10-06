@@ -1,26 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>日語單字</h1>
+<h1>友美子の家</h1>
 
 <table border="1" style="border-collapse:collapse;">
     <thead>
         <tr>
-            <th>收藏單字</th>
             <th>日文</th>
             <th>漢字</th>
             <th>英文/外來語</th>
             <th>中文</th>
+            <th>建立時間</th>
+            <th>更新時間</th>
             <th>編輯</th>
         </tr>
     </thead>
     <tbody>
-      <% @vocabularies.each do |vocabulary| %>
+      <% @vocabularies.select { |v| v.created_at >= (Date.today -1) }.sort_by { |v| v.created_at }.reverse.each do |vocabulary| %>
         <tr>
-            <td><%= link_to "收藏", "#" %></td>
             <td><h3><%= vocabulary.japanese %></h3></td>
             <td><%= vocabulary.kanji %></td>
             <td><%= vocabulary.english %></td>
             <td><%= vocabulary.chinese %></td>
+            <td><%= vocabulary.created_at %></td>
+            <td><%= vocabulary.updated_at %></td>
             <td>
                 <%= link_to "修改", edit_vocabulary_path(vocabulary) %>
                 <%= link_to "刪除", vocabulary_path(vocabulary), method: "delete", data: { confirm: "確認刪除" } %>
