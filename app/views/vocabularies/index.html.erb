@@ -1,8 +1,33 @@
+<style>
+ #customers {
+     font-family: Arial, Helvetica, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
+
+ #customers td, #customers th {
+     border: 1px solid #ddd;
+     padding: 8px;
+ }
+
+ #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+ #customers tr:hover {background-color: #ddd;}
+
+ #customers th {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: #04AA6D;
+     color: white;
+ }
+</style>
+
 <p style="color: green"><%= notice %></p>
 
-<h1>友美子の家</h1>
+<h1>單字</h1>
 
-<table border="1" style="border-collapse:collapse;">
+<table id="customers">
     <thead>
         <tr>
             <th>日文</th>
