@@ -34,8 +34,6 @@
             <th>漢字</th>
             <th>英文/外來語</th>
             <th>中文</th>
-            <th>建立時間</th>
-            <th>更新時間</th>
             <th>編輯</th>
         </tr>
     </thead>
@@ -46,8 +44,6 @@
             <td><%= vocabulary.kanji %></td>
             <td><%= vocabulary.english %></td>
             <td><%= vocabulary.chinese %></td>
-            <td><%= vocabulary.created_at %></td>
-            <td><%= vocabulary.updated_at %></td>
             <td>
                 <%= link_to "修改", edit_vocabulary_path(vocabulary) %>
                 <%= link_to "刪除", vocabulary_path(vocabulary), method: "delete", data: { confirm: "確認刪除" } %>
