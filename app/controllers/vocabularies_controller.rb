@@ -65,6 +65,6 @@ class VocabulariesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vocabulary_params
-      params.require(:vocabulary).permit(:japanese, :english, :kanji, :chinese)
+      params.require(:vocabulary).permit(:japanese, :english, :kanji, :chinese, :sentence)
     end
 end
