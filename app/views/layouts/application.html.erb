@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Yumiko</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+      <title>Yumiko</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= javascript_importmap_tags %>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
 
   <body>
+      <div class="w3-bar w3-green">
+          <a href="/" class="w3-bar-item w3-button w3-mobile">ホーム</a>
+	  <a href="/vocabularies" class="w3-bar-item w3-button w3-mobile">単語</a>
+	  <a href="/grammar" class="w3-bar-item w3-button w3-mobile">文法</a>
+      </div>
     <%= yield %>
   </body>
 </html>
