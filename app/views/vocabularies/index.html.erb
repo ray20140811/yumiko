@@ -25,11 +25,9 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h1>單字</h1>
-
-<table id="customers">
-    <thead>
-        <tr>
+<div class="w3-container">
+    <table class="w3-table w3-bordered w3-striped">
+        <tr class="w3-teal">
             <th>日文</th>
             <th>漢字</th>
             <th>英文/外來語</th>
@@ -37,9 +35,7 @@
             <th>例句</th>
             <th>編輯</th>
         </tr>
-    </thead>
-    <tbody>
-      <% @vocabularies.select { |v| v.created_at >= (Date.today -1) }.sort_by { |v| v.created_at }.reverse.each do |vocabulary| %>
+    <% @vocabularies.select { |v| v.created_at > 2.day.ago }.sort_by { |v| v.created_at }.reverse.each do |vocabulary| %>
         <tr>
             <td><h3><%= vocabulary.japanese %></h3></td>
             <td><%= vocabulary.kanji %></td>
@@ -51,9 +47,8 @@
                 <%= link_to "刪除", vocabulary_path(vocabulary), method: "delete", data: { confirm: "確認刪除" } %>
             </td>
         </tr>
-      <% end %>
-    </tbody>
-</table>
-
+    <% end %>
+    </table>
+</div>
 <br/>
 <%= link_to "新增單字", new_vocabulary_path %>
